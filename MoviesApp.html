@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.css">
+  <style>
+
+    img {
+      max-width: 70%;
+    }
+
+    .image-center {
+      display: block;
+      margin: 10px auto;
+    }
+
+  </style>
+</head>
+
+<body>
+<script src="https://unpkg.com/jquery"></script>
+<script>
+
+  //Contains a form with two inputs for a title and rating along w/ a button
+  // to submit the form
+
+  $("body").append("<form></form>");
+
+  $("form").append(`<input type ="text" placeholder = "Movie Title" id = "Title">`);
+
+  $("form").append(`<input type ="text" placeholder = "Movie Rating" id = "Rating">`);
+
+  $("form").append(`<input type ="submit" value = "Submit">`);
+
+
+  $("form").on("submit", function(evt) {
+    let movieTitle = $("#Title").val()
+    let movieRating = $("#Rating").val()
+    evt.preventDefault();
+  });
+
+  // let colorValues = $(".form-control");
+  // for (let colorValue of colorValues){
+  //   console.log(colorValue)
+  //   console.log(colorValue.value)
+  // }
+
+  //$("body").append("<h1></h1>)
+
+
+  // $(".form-control").on("change", function() {
+  //   let red = $(".form-control:eq(0)").val();
+  //   let green = $(".form-control:eq(1)").val();
+  //   let blue = $(".form-control:eq(2)").val();
+  //   $("body")
+  //   .css("background-color", `rgb(${red}, ${green}, ${blue})`)
+  // });
+
+
+  //When the form is submitted, capture the values for each of the inputs
+  // and append them to the DOM along w/ a button to remove each title/rating.
+
+
+  //When the button to remove is clicked, remove each title and rating.
+
+
+</script>
+</body>
+
+</html>
+
+
+
