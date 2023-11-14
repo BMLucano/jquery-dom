@@ -74,7 +74,31 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  $("article img").addClass("image-center")
+
+  $("article p:last-child").remove()
+
+  let randomFontSize = Math.floor(Math.random() * (100 - 0 + 1) + 0)
+  $("h1").css("font-size", randomFontSize)
+
+  $("ol").append("<li>5th list item.</li>")
+
+  $("aside")
+    .empty()
+    .append("<p>Sorry for the list's existence!</p>")
+
+
+  let $colorValues = $(".form-control").index(0).val()
+  console.log($colorValues)
+  // let red = $colorValues
+  // console.log(red)
+  $(".container")
+    .css("background-color", `rgb(100, 100, 255)`)
+
+  $(".container").on("click", "img", function(e) {
+    $(e.target).remove()
+  })
+
 </script>
 </body>
 
