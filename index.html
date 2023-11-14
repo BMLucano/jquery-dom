@@ -74,29 +74,37 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  $("article img").addClass("image-center")
 
-  $("article p:last-child").remove()
+  //Gives all images within article, the class of image-center.
+  $("article img").addClass("image-center");
 
-  let randomFontSize = Math.floor(Math.random() * (100 - 0 + 1) + 0)
-  $("h1").css("font-size", randomFontSize)
+  //Remove the last paragraph of the article.
+  $("article p:last-child").remove();
 
-  $("ol").append("<li>5th list item.</li>")
+  //Sets font size of the title to a random pixel size from 0-100.
+  let randomFontSize = Math.floor(Math.random() * (100 - 0 + 1) + 0);
+  $("h1").css("font-size", randomFontSize);
 
+  //Appends a 5th item to the list.
+  $("ol").append("<li>5th list item.</li>");
+
+  //Remove previous list and adds a paragraph apologizing for its existence.
   $("aside")
     .empty()
-    .append("<p>Sorry for the list's existence!</p>")
+    .append("<p>Sorry for the list's existence!</p>");
 
+  //Event listener to update background-color of DOM page with RGB inputs.
+  $(".form-control").on("change", function() {
+    let $red = $(".form-control:eq(0)").val();
+    let $green = $(".form-control:eq(1)").val();
+    let $blue = $(".form-control:eq(2)").val();
+    $("body")
+    .css("background-color", `rgb(${$red}, ${$green}, ${$blue})`)
+  });
 
-  let $colorValues = $(".form-control").index(0).val()
-  console.log($colorValues)
-  // let red = $colorValues
-  // console.log(red)
-  $(".container")
-    .css("background-color", `rgb(100, 100, 255)`)
-
+  //Event listener to remove clicked images from DOM.
   $(".container").on("click", "img", function(e) {
-    $(e.target).remove()
+    $(e.target).remove();
   })
 
 </script>
