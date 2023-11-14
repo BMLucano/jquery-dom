@@ -82,27 +82,40 @@
   $("article p:last-child").remove();
 
   //Sets font size of the title to a random pixel size from 0-100.
-  let randomFontSize = Math.floor(Math.random() * (100 - 0 + 1) + 0);
+  const randomFontSize = Math.floor(Math.random() * (100 - 0 + 1) + 0);
   $("h1").css("font-size", randomFontSize);
 
   //Appends a 5th item to the list.
   $("ol").append("<li>5th list item.</li>");
 
-  //Remove previous list and adds a paragraph apologizing for its existence.
+  //Secondary approach: .append($("<li>", {text="5th list item"}))
+
+  //Remove previous list and adds a paragraph, apologizing for its existence.
   $("aside")
     .empty()
     .append("<p>Sorry for the list's existence!</p>");
 
   //Event listener to update background-color of DOM page with RGB inputs.
   $(".form-control").on("change", function() {
-    let $red = $(".form-control:eq(0)").val();
-    let $green = $(".form-control:eq(1)").val();
-    let $blue = $(".form-control:eq(2)").val();
+    let red = $(".form-control:eq(0)").val();
+    let green = $(".form-control:eq(1)").val();
+    let blue = $(".form-control:eq(2)").val();
     $("body")
-    .css("background-color", `rgb(${$red}, ${$green}, ${$blue})`)
+    .css("background-color", `rgb(${red}, ${green}, ${blue})`)
   });
 
-  //Event listener to remove clicked images from DOM.
+  // For loop to achieve similar results:
+  // let colorValues = $(".form-control");
+  // for (let colorValue of colorValues){
+  //   console.log(colorValue)
+  //   console.log(colorValue.value)
+  // }
+
+  //Secondary approach: $(".form-control").eq(0).val();
+  //$ is only used for jQuery objects (not values from .val())
+
+  //Event listener to remove clicked images from DOM. (note: future images
+  // included)
   $(".container").on("click", "img", function(e) {
     $(e.target).remove();
   })
